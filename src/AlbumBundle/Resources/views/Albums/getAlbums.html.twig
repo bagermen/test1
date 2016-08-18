@@ -1,0 +1,1 @@
+[{% for model in models %}{% embed 'AlbumBundle:Albums:getAlbum.html.twig' %}{% endembed %}{% if not loop.last %},{%  endif %}{% endfor %}]

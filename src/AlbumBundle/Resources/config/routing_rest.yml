@@ -1,0 +1,11 @@
+album_routes:
+    type: rest
+    prefix: /
+    resource: "AlbumBundle:Albums"
+    name_prefix: albums_routes_
+
+images_routes:
+    type:     rest
+    parent:   album_routes
+    resource: "AlbumBundle:Images"
+    name_prefix: albums_images_

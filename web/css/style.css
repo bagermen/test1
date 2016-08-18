@@ -1,0 +1,75 @@
+.album {
+    height: 400px;
+    box-sizing: content-box;
+    background-color:grey;
+    border: 10px solid grey;
+    border-right: none;
+}
+
+.album .titles, .album .titles ul {
+    height: 400px;
+}
+
+.album>div.titles {
+    padding: 0;
+    overflow-y: scroll;
+}
+
+.album .titles ul li {
+    padding: 5px;
+    display: block;
+}
+
+.album .titles ul li.selected {
+    background-color: blue;
+    color: #ffffff;
+}
+
+.album div.titles ul>li:hover {
+    background-color: grey;
+    color: white;
+}
+
+.album div.titles a {
+    color: inherit;
+}
+
+.album .images-ct {
+
+}
+
+.album .images, .album .images-ct  {
+    height: 360px;
+}
+
+.album .images {
+    overflow-y: scroll;
+}
+
+.album .paginate {
+    height: 40px;
+    padding-top: 8px;
+}
+
+.album .images, .album .titles {
+    background-color: #ffffff;
+}
+
+.album .images>div {
+    width: 45%;
+    height: 300px;
+    display: inline-block;
+    margin: 5px;
+}
+.album .image {
+    max-width:100%;
+    max-height:100%;
+    margin: auto;
+    background-color: #ffffff;
+    display: block;
+    border: 2px solid grey;
+}
+
+.album .paginate a {
+    margin-right: 10px;
+}

@@ -1,0 +1,2 @@
+{{ '{' }}"page":{{ pagination.getCurrentPageNumber }},"page_size":{{ pagination.getItemNumberPerPage }},"total":{{ pagination.getTotalItemCount }},"data":[{% for image in pagination.items %}{% embed 'AlbumBundle:Images:getImage.html.twig' %}{% endembed %}{% if not loop.last %},{%  endif %}{% endfor %}]{{ '}' }}
+

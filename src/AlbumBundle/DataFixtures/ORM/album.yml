@@ -1,0 +1,33 @@
+AlbumBundle\Entity\Album:
+    album0:
+        name: 'Cats'
+    album1:
+        name: 'Sports'
+    album2:
+        name: 'Food'
+    album3:
+        name: 'City'
+    album4:
+        name: 'Transport'
+
+AlbumBundle\Entity\Image:
+    image{0..4}:
+        file: <imageUrl("640","480","cats")>
+        name: <firstName()>
+        album: '@album0'
+    image{5..25}:
+        file: <imageUrl("640","480","sports")>
+        name: <word()>
+        album: '@album1'
+    image{26..50}:
+        file: <imageUrl("640","480","food")>
+        name: <word()>
+        album: '@album2'
+    image{51..71}:
+        file: <imageUrl("640","480","city")>
+        name: <word()>
+        album: '@album3'
+    image{72..93}:
+        file: <imageUrl("640","480","transport")>
+        name: '<word()>'
+        album: '@album4'

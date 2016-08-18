@@ -1,0 +1,13 @@
+parameters:
+    albums.service.class: "AlbumBundle\Services\AlbumsService"
+    images.service.class: "AlbumBundle\Services\ImagesService"
+services:
+    albums.service:
+        class: "%albums.service.class%"
+        arguments:
+            - "@album.repository.album"
+
+    images.service:
+        class: "%images.service.class%"
+        arguments:
+            - "@album.repository.image"

@@ -1,0 +1,9 @@
+album_homepage:
+    path:     /
+    defaults: { _controller: AlbumBundle:Default:index }
+
+#REST
+rest :
+  type : rest
+  resource : "routing_rest.yml"
+  prefix : /api
