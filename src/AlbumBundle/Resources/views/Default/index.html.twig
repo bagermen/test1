@@ -2,58 +2,29 @@
 {% block title %}Welcome!{% endblock %}
 
 {% block stylesheets %}
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/assets/vendor/bootstrap/dist/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/vendor/bootstrap/dist/css/bootstrap-theme.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/album/css/main.css') }}">
 {% endblock %}
 
 {% block javascripts %}
-    <script type="text/javascript" src="{{ asset('marionettejs/json2.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('marionettejs/jquery.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('marionettejs/underscore.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('marionettejs/backbone.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('marionettejs/lib/backbone.paginator.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('marionettejs/backbone.marionette.js') }}"></script>
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-    <script type="text/javascript" src="{{ asset('js/testscript.js') }}"></script>
+    <script data-main="{{ asset('bundles/album/js/main.js') }}" src="{{ asset('assets/vendor/requirejs/require.js') }}"></script>
+    <script>
+        define('config', function () {
+            return {
+                albumsUrl: '{{ path('albums_routes_get_albums') }}',
+                imagesUrl: '{{ path('albums_images_get_album_images', {'album': ':id'}) }}',
+                pageSize: 10
+            }
+        });
+    </script>
 {% endblock %}
 
 {% block body %}
-    {# templates #}
-    <script id="layout-view-template" type="text/template">
-        <div class="col-md-2 titles"></div>
-        <div class="col-md-10">
-            <div class="row-fluid images-ct"></div>
-            <div class="row-fluid paginate"></div>
-        </div>
-    </script>
-    <script id="image-template" type="text/template">
-        <img class="image" src="<%- file %>">
-    </script>
-    <script id="images-template" type="text/template">
-        <div class="col-md-12 images"></div>
-    </script>
-    <script id="paginator-template" type="text/template">
-        <a class="btn btn-default" href="#<%- prev %>">Prev</a><a  class="btn btn-default" href="#<%- next %>" >Next</a><span>Current page: <%- current %>; Total pages: <%- total %></span>
-    </script>
-    <script id="titles-template" type="text/template">
-        <ul class="list-unstyled"></ul>
-    </script>
-    <script id="title-template" type="text/template">
-        <a href="#album/<%- id %>"><%- name %></a>
-    </script>
-    {# end templates #}
-
     <div class="container">
         <div class="row">
             <div class="col-md-12"><h1>Album</h1></div>
         </div>
-        <div class="row album" id="renderData">
-        </div>
+        <div id="renderData"></div>
     </div>
 {% endblock %}

@@ -1,0 +1,15 @@
+.album {
+  height: $gallery-height;
+  box-sizing: content-box;
+  background-color: $gallery-color;
+  border: 10px solid $gallery-color;
+  border-right: none;
+
+  @import "albums";
+  @import "images";
+  @import "pager";
+
+  .images-ct  {
+    height: ($gallery-height - 40px);
+  }
+}

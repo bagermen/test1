@@ -1,0 +1,33 @@
+// album
+
+div.titles {
+  padding: 0;
+  overflow-y: scroll;
+}
+
+.titles ul li {
+  padding: 5px;
+  display: block;
+}
+
+div.titles ul>li:hover {
+  background-color: $gallery-color;
+  color: white;
+}
+
+.titles ul li.selected {
+  background-color: $album-select-color;
+  color: #ffffff;
+}
+
+div.titles a {
+  color: inherit;
+}
+
+.titles, .titles ul {
+  height: $gallery-height;
+}
+
+.titles {
+  background-color: $background-color;
+}

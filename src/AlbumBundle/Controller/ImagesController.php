@@ -35,7 +35,7 @@ class ImagesController extends FOSRestController
         $pagination = $paginator->paginate(
             $service->getQueryByAlbum($album),
             $request->query->getInt('page', 1),
-            10
+            $request->query->getInt('page_size', 10)
         );
 
         return $this->view(

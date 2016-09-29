@@ -1,0 +1,21 @@
+{
+  "name": "album-test",
+  "version": "1.0.0",
+  "description": "album test",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bagermen/test1.git"
+  },
+  "author": "Roman Kuznecov",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-coffeelint": "0.0.16",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-coffee": "^1.0.0",
+    "grunt-contrib-compass": "^1.1.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0"
+  }
+}

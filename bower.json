@@ -1,0 +1,23 @@
+{
+  "name": "album-test",
+  "homepage": "https://github.com/bagermen/test1",
+  "authors": [
+    "Roman Kuznecov <R.Kuznecov@petrosoftinc.com>"
+  ],
+  "description": "test task",
+  "keywords": [
+    "album",
+    "test"
+  ],
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "backbone.marionette": "marionette#^3.0.0",
+    "bootstrap": "^3.3.7",
+    "json2": "*",
+    "underscore": "^1.8.3",
+    "backbone.paginator": "^2.0.5",
+    "requirejs": "^2.3.2",
+    "text": "requirejs-text#^2.0.15"
+  }
+}
