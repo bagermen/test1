@@ -15,3 +15,11 @@
 Project will be available at **localhost:8000**
 
 **Requirements**: PHP, MySQL, npm, compass
+
+**SQL**:
+
+    SELECT a.*
+    FROM album a
+    JOIN image i ON i.album_id = a.id
+    GROUP BY a.id
+    HAVING COUNT(i.id ) <= 10
