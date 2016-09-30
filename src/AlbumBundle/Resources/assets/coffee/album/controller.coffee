@@ -32,7 +32,7 @@ define [
         Bus.trigger 'render:album:titles', @getTitlesView()
 
       getTitlesView: ->
-        @options.album = new TitlesCollectionView collection: @titles unless @getOption('album')
+        @options.album = new TitlesCollectionView collection: @titles
         @getOption('album')
 
       loadImages: (titleId) ->

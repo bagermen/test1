@@ -1,0 +1,9 @@
+AlbumBundle\Entity\Album:
+    album0:
+        name: 'Cats'
+
+AlbumBundle\Entity\Image:
+    image{0..9}:
+        file: <imageUrl("640","480","cats")>
+        name: <firstName()>
+        album: '@album0'

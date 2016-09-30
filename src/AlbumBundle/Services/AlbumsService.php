@@ -22,10 +22,13 @@ class AlbumsService
 
     /**
      * Albums list
+     * @param int $maxImages
      * @return array
      */
-    public function getAlbumList()
+    public function getAlbumList($maxImages = 0)
     {
-        return $this->albumRepository->findAll();
+        return ($maxImages <= 0)
+            ? $this->albumRepository->findAll()
+            : $this->albumRepository->filterByMaxImagesPerAlbum($maxImages);
     }
 }

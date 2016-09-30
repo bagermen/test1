@@ -13,7 +13,10 @@ define [
 
       url = Config.imagesUrl.replace ':id', titleId
 
-      titles.fetch(url: url).done () ->
-        handler titleId, titles.state.currentPage, titles.state.totalPages
+      if titleId == 0 and page == 0
+        handler 0, 0, 0
+      else
+        titles.fetch(url: url).done () ->
+          handler titleId, titles.state.currentPage, titles.state.totalPages
 
       titles

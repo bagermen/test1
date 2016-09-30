@@ -19,6 +19,7 @@ define [
         super
 
       resetImages: =>
+        @collection = Bus.request 'images:repository:load', 0, 0, ->
         @showImagesView(0, 0, 0)
 
       loadImages: (titleId, page = 1) =>

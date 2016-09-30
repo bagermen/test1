@@ -18,5 +18,6 @@ define [
         titles: ".titles"
         images: ".images-ct"
         paginate: ".paginate"
+        filter: ".filter"
 
       behaviors: [AppLayoutBehaviour]

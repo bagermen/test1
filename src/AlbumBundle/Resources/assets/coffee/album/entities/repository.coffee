@@ -7,7 +7,9 @@ define [
     Titles
   ) ->
     Bus.reply 'album:repository:load', (handler) ->
+      filter = Bus.request 'filter:search:value'
+
       titles = new Titles()
-      titles.fetch().done handler
+      titles.fetch(data: filter: filter).done handler
 
       titles

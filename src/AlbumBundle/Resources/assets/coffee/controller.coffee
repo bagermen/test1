@@ -5,6 +5,7 @@ define [
     'core/bus'
     'album/app'
     'images/app'
+    'filter/app'
   ],
   (
     AppLayoutView

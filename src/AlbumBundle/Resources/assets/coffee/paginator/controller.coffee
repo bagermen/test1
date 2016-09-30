@@ -15,8 +15,13 @@ define [
 
       updatePaginator: (album, page, total) =>
         pager = @getPagerView()
-        pager.updatePagerModel album, page, total
-        Bus.trigger 'render:paginator:pager', pager
+        if total > 1
+          pager.updatePagerModel album, page, total
+          Bus.trigger 'render:paginator:pager', pager
+        else
+          Bus.trigger 'remove:paginator:pager', pager unless pager.isDestroyed()
 
       getPagerView: ->
-        new PagerView()
+        unless @getOption('pager') and not @getOption('pager').isDestroyed()
+          @options.pager = new PagerView()
+        @getOption('pager')
