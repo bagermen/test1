@@ -17,9 +17,14 @@ Project will be available at **localhost:8000**
 **Requirements**: PHP, MySQL, npm, compass
 
 **SQL**:
+*List of all albums and images with MAX 10 images at an album*
 
-    SELECT a.*
+    
+    SET @album = 0;
+    SET @n = 0;
+    
+    SELECT a.*, i.*, @n := IF(@album <> a.id, 1, @n + 1) num, @album := a.id
     FROM album a
     JOIN image i ON i.album_id = a.id
-    GROUP BY a.id
-    HAVING COUNT(i.id ) <= 10
+    HAVING num <= 10
+    ORDER BY a.id, i.id
